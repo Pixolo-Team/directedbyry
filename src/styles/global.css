@@ -1,1 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
+
+/* ---------------------------------------
+   Gravita GEO (Local Fonts)
+---------------------------------------- */
+@font-face {
+  font-family: "Gravita Geo";
+  src: url("/fonts/GravitaGEO-Thin.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gravita Geo";
+  src: url("/fonts/GravitaGEO-ExtraLight.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gravita Geo";
+  src: url("/fonts/GravitaGEO-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gravita Geo";
+  src: url("/fonts/GravitaGEO-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gravita Geo";
+  src: url("/fonts/GravitaGEO-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gravita Geo";
+  src: url("/fonts/GravitaGEO-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gravita Geo";
+  src: url("/fonts/GravitaGEO-ExtraBold.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gravita Geo";
+  src: url("/fonts/GravitaGEO-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------------------------------------
+   Base Global Styles
+---------------------------------------- */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px; /* base 1rem = 16px */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: "Gravita Geo", sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+@theme {
+  --font-sans: "Gravita Geo", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-serif: "Roboto Condensed", ui-serif, Georgia, Cambria,
+    "Times New Roman", Times, serif;
+}
+
+/* Optional improvements */
+* {
+  @apply box-border;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Optional scrollbar style (nice subtle look) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+@theme inline {
+  --color-n-50: var(--color-n-50);
+  --color-n-100: var(--color-n-100);
+  --color-n-200: var(--color-n-200);
+  --color-n-300: var(--color-n-300);
+  --color-n-400: var(--color-n-400);
+  --color-n-500: var(--color-n-500);
+  --color-n-600: var(--color-n-600);
+  --color-n-700: var(--color-n-700);
+  --color-n-800: var(--color-n-800);
+  --color-n-900: var(--color-n-900);
+  --color-n-950: var(--color-n-950);
+}
+
+:root {
+  --color-n-50: #ffffff;
+  --color-n-100: var(--color-slate-100);
+  --color-n-200: var(--color-slate-200);
+  --color-n-300: var(--color-slate-300);
+  --color-n-400: var(--color-slate-400);
+  --color-n-500: var(--color-slate-500);
+  --color-n-600: var(--color-slate-600);
+  --color-n-700: var(--color-slate-700);
+  --color-n-800: var(--color-slate-800);
+  --color-n-900: var(--color-slate-900);
+  --color-n-950: var(--color-slate-950);
+  --color-yellow-700: #dfaf37;
+}
+
+.dark {
+  --color-n-50: var(--color-slate-950);
+  --color-n-100: var(--color-slate-900);
+  --color-n-200: var(--color-slate-800);
+  --color-n-300: var(--color-slate-700);
+  --color-n-400: var(--color-slate-600);
+  --color-n-500: var(--color-slate-500);
+  --color-n-600: var(--color-slate-400);
+  --color-n-700: var(--color-slate-300);
+  --color-n-800: var(--color-slate-200);
+  --color-n-900: var(--color-slate-100);
+  --color-n-950: #ffffff;
+  --color-yellow-700: #dfaf37;
+}
