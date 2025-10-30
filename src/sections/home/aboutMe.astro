@@ -7,19 +7,29 @@ const aboutMeContent = {
 };
 ---
 
-<div>
+<!-- About Me section -->
+<section>
   <!-- Heading -->
-  <h2>
+  <p>
     {aboutMeTitle}
-  </h2>
+  </p>
+
   <div>
-    <!-- Role -->
-    <h5>
-      {aboutMeContent.title}
-    </h5>
-    <!-- Description -->
-    <p>
-      {aboutMeContent.content}
-    </p>
+    <div>
+      <!-- Role -->
+      <p>
+        {aboutMeContent.title}
+      </p>
+
+      <!-- Description -->
+      <p>
+        {aboutMeContent.content}
+      </p>
+    </div>
+
+    <!-- Image Section -->
+    <div>
+      <img src="aboutMe.jpg" alt="Portrait of Creative Director" />
+    </div>
   </div>
-</div>
+</section>
