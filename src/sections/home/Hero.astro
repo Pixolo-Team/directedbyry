@@ -17,13 +17,15 @@ const content = {
 <section class="flex flex-col bg-n-950">
 
     <!-- Container -->
-    <div class="flex flex-col py-12 px-6 w-[100%]">
+    <div class="flex flex-col py-12 px-6">
 
         <!-- Content -->
         <div class="">
 
             <!-- Hero Image -->
-            <img src={content.heroImage} alt="hero-img" class="w-0 h-0">
+            <div class="hidden">
+                <img src={content.heroImage} alt="hero-img" width="" height="">
+            </div>
 
             <!-- Text Content -->
             <div class="flex flex-col py-9 gap-6">
@@ -35,19 +37,19 @@ const content = {
                 </div>
 
                 <!-- Hero Content -->
-                <div class="flex flex-col gap-4">
-                    <p class="font-sans font-light text-sm leading-normal text-n-100">{content.heroContent.paragraph1}</p>
-                    <p class="font-sans font-light text-sm leading-normal text-n-100">{content.heroContent.paragraph2}</p>
-                    <p class="font-sans font-light text-sm leading-normal text-n-100">{content.heroContent.paragraph3}</p>
+                <div class="flex flex-col gap-4 font-sans font-light text-sm leading-normal text-n-100">
+                    <p >{content.heroContent.paragraph1}</p>
+                    <p >{content.heroContent.paragraph2}</p>
+                    <p >{content.heroContent.paragraph3}</p>
                 </div>
                  
             </div>
         </div>
 
         <!-- Scroll -->
-        <div class="flex flex-col place-self-center">
+        <div class="flex flex-col m-auto items-center">
             <p class="font-sans font-light text-sm leading-normal text-n-100">SCROLL</p>
-            <img src="/down-arrow.svg" class="place-self-center" alt="down-arrow-svg" width="24px" height="24px">
+            <img src="/down-arrow.svg" alt="down-arrow-svg" width="24px" height="24px">
         </div>
 
     </div>
