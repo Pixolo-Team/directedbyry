@@ -1,0 +1,54 @@
+---
+// SectionContent //
+const content = {
+    heroImage : "../../../public/hero-image.png",
+    headerContent : {
+        title: "नमस्ते",
+        subTitle: "I  AM  RAHUL  YADAV"
+    },
+    heroContent : {
+        paragraph1 : "A Creative Director shaping stories across films, ads, and everything in between. With years of experience behind the camera and in the edit room, I thrive on crafting visuals that don’t just look good—they make people feel something.",
+        paragraph2 : "From cinematic films to fast-paced commercials, I bring together strategy, storytelling, and style to turn ideas into memorable experiences. My work is equal parts creative spark and disciplined craft—always chasing the balance between vision and execution.",
+        paragraph3 : "Currently, I’m collaborating with brands, agencies, and production houses to create films and campaigns that stick with audiences long after the screen fades to black."
+    }
+}
+---
+
+<section class="">
+
+    <!-- Container -->
+    <div class="">
+
+        <!-- Content -->
+        <div class="">
+
+            <!-- Hero Image -->
+            <img src={content.heroImage} alt="hero-img" width="100px" height="100px" >
+
+            <!-- Text Content -->
+            <div class="">
+
+                <!-- Section Header -->
+                <div class="">
+                    <p>{content.headerContent.title}</p>
+                    <p>{content.headerContent.subTitle}</p>
+                </div>
+
+                <!-- Hero Content -->
+                <div class="">
+                    <p>{content.heroContent.paragraph1}</p>
+                    <p>{content.heroContent.paragraph2}</p>
+                    <p>{content.heroContent.paragraph3}</p>
+                </div>
+                 
+            </div>
+        </div>
+
+        <!-- Scroll -->
+        <div class="">
+            <p>SCROLL</p>
+            <img src="../../../public/down-arrow.svg" alt="down-arrow-svg" width="10px" height="10px">
+        </div>
+
+    </div>
+</section>
