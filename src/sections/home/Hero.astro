@@ -1,7 +1,7 @@
 ---
 // SectionContent //
 const content = {
-    heroImage : "../../../public/hero-image.png",
+    heroImage : "/hero-image.png",
     headerContent : {
         title: "नमस्ते",
         subTitle: "I  AM  RAHUL  YADAV"
@@ -14,40 +14,40 @@ const content = {
 }
 ---
 
-<section class="">
+<section class="flex flex-col bg-n-950">
 
     <!-- Container -->
-    <div class="">
+    <div class="flex flex-col py-12 px-6 w-[100%]">
 
         <!-- Content -->
         <div class="">
 
             <!-- Hero Image -->
-            <img src={content.heroImage} alt="hero-img" width="100px" height="100px" >
+            <img src={content.heroImage} alt="hero-img" class="w-0 h-0">
 
             <!-- Text Content -->
-            <div class="">
+            <div class="flex flex-col py-9 gap-6">
 
                 <!-- Section Header -->
-                <div class="">
-                    <p>{content.headerContent.title}</p>
-                    <p>{content.headerContent.subTitle}</p>
+                <div class="flex flex-col">
+                    <p class="font-[ABeeZee] font-normal text-2xl leading-tight text-yellow-700">{content.headerContent.title}</p>
+                    <p class="font-[Roboto Condensed] font-extrabold text-4xl leading-tight text-yellow-700 tracking-[-4%]">{content.headerContent.subTitle}</p>
                 </div>
 
                 <!-- Hero Content -->
-                <div class="">
-                    <p>{content.heroContent.paragraph1}</p>
-                    <p>{content.heroContent.paragraph2}</p>
-                    <p>{content.heroContent.paragraph3}</p>
+                <div class="flex flex-col gap-4">
+                    <p class="font-[Gravita GEO] font-light text-sm leading-normal text-n-100">{content.heroContent.paragraph1}</p>
+                    <p class="font-[Gravita GEO] font-light text-sm leading-normal text-n-100">{content.heroContent.paragraph2}</p>
+                    <p class="font-[Gravita GEO] font-light text-sm leading-normal text-n-100">{content.heroContent.paragraph3}</p>
                 </div>
                  
             </div>
         </div>
 
         <!-- Scroll -->
-        <div class="">
-            <p>SCROLL</p>
-            <img src="../../../public/down-arrow.svg" alt="down-arrow-svg" width="10px" height="10px">
+        <div class="flex flex-col place-self-center">
+            <p class="font-[Gravita GEO] font-light text-sm leading-normal text-n-100">SCROLL</p>
+            <img src="/down-arrow.svg" class="place-self-center" alt="down-arrow-svg" width="24px" height="24px">
         </div>
 
     </div>
