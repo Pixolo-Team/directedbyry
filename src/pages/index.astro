@@ -3,14 +3,16 @@
 import StoryCard from "../components/StoryCard.astro";
 import Card from "../components/StoryCard.astro";
 import Layout from "../layouts/Layout.astro";
+import AboutMe from "../sections/home/aboutMe.astro";
 
 // SECTION //
-import Hero from "../sections/home/Hero.astro"
+import Hero from "../sections/home/Hero.astro";
 ---
 
 <Layout>
-<Hero/>
-<StoryCard/>
+  <Hero />
+  <AboutMe />
+  <StoryCard />
   <img src="/hero.png" alt="" class="w-full" />
   <img src="/dbry-2.png" alt="" class="w-full" />
   <img src="/dbry-3.png" alt="" class="w-full" />
@@ -20,4 +22,3 @@ import Hero from "../sections/home/Hero.astro"
   <img src="/contact.png" alt="" class="w-full" />
   <p class="font-serif">Whatsapp</p>
 </Layout>
-

@@ -8,28 +8,37 @@ const aboutMeContent = {
 ---
 
 <!-- About Me section -->
-<section>
-  <!-- Heading -->
-  <p>
-    {aboutMeTitle}
-  </p>
+<section class="flex flex-col w-auto h-auto max-h-[561px] px-6 bg-[#0B0B0B]">
+  <!-- Wrapper div added for styling -->
+  <div class="flex flex-col w-full h-auto max-w-2xl py-[44px]">
+    <!-- Heading -->
+    <p
+      class="font-['Roboto_Condensed'] font-semibold text-4xl leading-[125%] tracking-normal text-[#DFAF37]"
+    >
+      {aboutMeTitle}
+    </p>
 
-  <div>
     <div>
-      <!-- Role -->
-      <p>
-        {aboutMeContent.title}
-      </p>
+      <div class="flex flex-col w-full max-w-[327px] h-auto gap-4">
+        <!-- Role -->
+        <p
+          class="font-['Gravita_GEO'] font-medium text-sm leading-[163%] tracking-normal text-[#FFFFFF]"
+        >
+          {aboutMeContent.title}
+        </p>
 
-      <!-- Description -->
-      <p>
-        {aboutMeContent.content}
-      </p>
-    </div>
+        <!-- Description -->
+        <p
+          class="font-['Gravita_GEO'] font-[250] font-extralight text-sm leading-[163%] tracking-[2%] text-[#FFFFFF]"
+        >
+          {aboutMeContent.content}
+        </p>
+      </div>
 
-    <!-- Image Section -->
-    <div>
-      <img src="about-me.jpg" alt="Portrait of Creative Director" />
+      <!-- Image Section -->
+      <div class="hidden">
+        <img src="about-me.jpg" alt="Portrait of Creative Director" />
+      </div>
     </div>
   </div>
 </section>
