@@ -1,18 +1,26 @@
 ---
-
-    
-
+const storyCardContents = {
+  story_subtitle: "Where it all began.",
+  description_of_story:
+    "It all began on a football field, not a film set. After saving a decisive penalty in school, I was interviewed but forgot to thank my coach and teammates. That moment sparked something — I used the clip to express my gratitude, and its impact made me realize the power of storytelling to connect heart and emotion. That’s when my journey as a content specialist and director truly began.",
+};
 ---
 
-<section>
-    <!-- Start of the Card-Section -->
-    <div>
-        <!-- Image Section -->
-        <img src="/storyCardImage.png"/>
-    <div>
-        <!-- The Main Story -->
-        <p>HELLOO THIS IS THE SUB-HEADING</p>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis veritatis earum quae similique illum! Modi architecto quo eum harum beatae ipsum et vero facere, excepturi explicabo expedita nemo nesciunt obcaecati?</p>
-    </div>
-    </div>
-</section>
+<!-- Start of the Card-Section -->
+<div class="max-w-[327px] px-5 pt-4 pb-7 flex flex-col gap-5 m-auto">
+  <!-- Image Section -->
+  <img src="/story-card-image.png " class="w-[295px] h-[315px] object-fill" />
+  <div class="flex flex-col gap-2.5">
+    <!-- The Main Story -->
+    <p
+      class="text-n-950 font-medium text-3xl leading-none tracking-normal font-serif"
+    >
+      {storyCardContents.story_subtitle}
+    </p>
+    <p
+      class="text-n-700 font-sans font-extralight text-lg leading-tight tracking-normal"
+    >
+      {storyCardContents.description_of_story}
+    </p>
+  </div>
+</div>

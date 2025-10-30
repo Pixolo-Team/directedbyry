@@ -1,0 +1,44 @@
+---
+const about_me_title = "ABOUT ME";
+const about_me_content = {
+  title: "Curator of Human Experience",
+  content:
+    "Based in the vibrant heart of Mumbai, I am a dynamic Creative Director with a distinguished 14+ year journey of shaping compelling narratives for leading brands across sports, entertainment, and corporate sectors. My work is defined by a passionate commitment to high-impact storytelling that elevates brand integrity and captivates audiences. With a proven track record of leading creative vision from a nascent concept to flawless execution, I excel in managing both broadcast media and branded content. I am adept at directing cross-functional teams of up to 25 professionals, steering project budgets, and have a demonstrated history of boosting production efficiency by up to 40%. I am not just a director but a dedicated partner in building a brand's & creative legacy.",
+};
+---
+
+<!-- About Me section -->
+<section class="flex flex-col w-auto h-auto px-6 bg-n-950">
+  <!-- Wrapper div added for styling -->
+  <div class="flex flex-col w-full h-auto py-11">
+    <!-- Heading -->
+    <p
+      class="font-serif font-semibold text-4xl leading-tight tracking-normal text-yellow-700"
+    >
+      {about_me_title}
+    </p>
+
+    <div>
+      <div class="flex flex-col w-full h-auto gap-3.5">
+        <!-- Role -->
+        <p
+          class="font-sans font-medium text-sm leading-relaxed tracking-normal leading-relaxed text-n-50"
+        >
+          {about_me_content.title}
+        </p>
+
+        <!-- Description -->
+        <p
+          class="font-sans font-light text-sm leading-relaxed tracking-[2%] leading-relaxed text-n-50"
+        >
+          {about_me_content.content}
+        </p>
+      </div>
+
+      <!-- Image Section -->
+      <div class="hidden">
+        <img src="about-me.jpg" alt="Portrait of Creative Director" />
+      </div>
+    </div>
+  </div>
+</section>
