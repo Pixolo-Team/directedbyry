@@ -1,10 +1,10 @@
 ---
 // SectionContent //
 const content = {
-    heroImage : "../../../public/hero-image.png",
+    heroImage : "/hero-image.png",
     headerContent : {
         title: "नमस्ते",
-        subTitle: "I  AM  RAHUL  YADAV"
+        subTitle: "I AM RAHUL YADAV"
     },
     heroContent : {
         paragraph1 : "A Creative Director shaping stories across films, ads, and everything in between. With years of experience behind the camera and in the edit room, I thrive on crafting visuals that don’t just look good—they make people feel something.",
@@ -14,40 +14,42 @@ const content = {
 }
 ---
 
-<section class="">
+<section class="flex flex-col bg-n-950">
 
     <!-- Container -->
-    <div class="">
+    <div class="flex flex-col py-12 px-6">
 
         <!-- Content -->
         <div class="">
 
             <!-- Hero Image -->
-            <img src={content.heroImage} alt="hero-img" width="100px" height="100px" >
+            <div class="hidden">
+                <img src={content.heroImage} alt="hero-img" width="" height="">
+            </div>
 
             <!-- Text Content -->
-            <div class="">
+            <div class="flex flex-col py-9 gap-6">
 
                 <!-- Section Header -->
-                <div class="">
-                    <p>{content.headerContent.title}</p>
-                    <p>{content.headerContent.subTitle}</p>
+                <div class="flex flex-col">
+                    <p class="font-[ABeeZee] font-normal text-2xl leading-tight text-yellow-700">{content.headerContent.title}</p>
+                    <p class="font-serif font-extrabold text-4xl leading-tight text-yellow-700 tracking-[-4%]">{content.headerContent.subTitle}</p>
                 </div>
 
                 <!-- Hero Content -->
-                <div class="">
-                    <p>{content.heroContent.paragraph1}</p>
-                    <p>{content.heroContent.paragraph2}</p>
-                    <p>{content.heroContent.paragraph3}</p>
+                <div class="flex flex-col gap-4 font-sans font-light text-sm leading-normal text-n-100">
+                    <p >{content.heroContent.paragraph1}</p>
+                    <p >{content.heroContent.paragraph2}</p>
+                    <p >{content.heroContent.paragraph3}</p>
                 </div>
                  
             </div>
         </div>
 
         <!-- Scroll -->
-        <div class="">
-            <p>SCROLL</p>
-            <img src="../../../public/down-arrow.svg" alt="down-arrow-svg" width="10px" height="10px">
+        <div class="flex flex-col m-auto items-center">
+            <p class="font-sans font-light text-sm leading-normal text-n-100">SCROLL</p>
+            <img src="/down-arrow.svg" alt="down-arrow-svg" width="24px" height="24px">
         </div>
 
     </div>
