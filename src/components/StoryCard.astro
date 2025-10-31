@@ -7,18 +7,20 @@ const storyCardContents = {
 ---
 
 <!-- Start of the Card-Section -->
-<div class="max-w-[327px] px-5 pt-4 pb-7 flex flex-col gap-5 m-auto bg-n-50">
+<div class="max-w-[327px] px-5 pt-4 pb-7 flex flex-col gap-5 m-auto bg-n-50 md:max-w-[633px] md:p-8 md:gap-9 lg:max-w-[633px] lg:gap-9 lg:p-8
+">
   <!-- Image Section -->
-  <img src="/story-card-image.png " class="w-[295px] h-[315px] object-fill" />
-  <div class="flex flex-col gap-2.5">
+  <img src="/story-card-image.png " class="w-[295px] h-[315px] object-fill md:w-[569px]  lg:w-[569px] " />
+  <div class="flex flex-col gap-2.5 
+">
     <!-- The Main Story -->
     <p
-      class="text-n-950 font-medium text-3xl leading-none tracking-normal font-serif"
+      class="text-n-950 font-medium text-3xl leading-none tracking-normal font-serif md:text-5xl lg:text-5xl  "
     >
       {storyCardContents.story_subtitle}
     </p>
     <p
-      class="text-n-700 font-sans font-extralight text-lg leading-tight tracking-normal"
+      class="text-n-700 font-sans font-extralight text-lg leading-tight tracking-normal md:text-xl md:font-[250] lg:text-xl lg:leading-tight lg:font-[250]"
     >
       {storyCardContents.description_of_story}
     </p>
