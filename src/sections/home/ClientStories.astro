@@ -1,0 +1,83 @@
+<section class="py-32 px-6 bg-[#0B0B0B] overflow-hidden">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-20 text-center">
+      <p class="text-2xl text-[#C6A84A] tracking-[0.2em] uppercase mb-4">
+        Trusted By
+      </p>
+      <h2 class="text-4xl md:text-5xl lg:text-6xl text-white mb-6">
+        Stories We've Told.<br />Brands We've Defined.
+      </h2>
+      <div class="h-px w-24 bg-[#D4AF37] mx-auto"></div>
+    </div>
+
+    <!-- First Row - Scrolling Left to Right -->
+    <div class="mb-8 relative overflow-hidden">
+      <div class="scroll-row scroll-left flex gap-8">
+        {
+          Array.from({ length: 45 * 2 }).map((_, i) => (
+            <div class="min-w-[200px] aspect-video bg-white/5 backdrop-blur-sm border border-[#D4AF37]/10 flex items-center justify-center hover:border-[#D4AF37]/30 transition-all duration-300 hover:scale-105">
+              <p class="text-white/30 text-sm">Brand {(i % 45) + 1}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Second Row - Scrolling Right to Left -->
+    <div class="relative overflow-hidden">
+      <div class="scroll-row scroll-right flex gap-8">
+        {
+          Array.from({ length: 45 * 2 }).map((_, i) => (
+            <div class="min-w-[200px] aspect-video bg-white/5 backdrop-blur-sm border border-[#D4AF37]/10 flex items-center justify-center hover:border-[#D4AF37]/30 transition-all duration-300 hover:scale-105">
+              <p class="text-white/30 text-sm">Brand {(i % 45) + 1}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="mt-12 text-center">
+      <p class="text-white/40 italic">Ready for your brand logos</p>
+    </div>
+  </div>
+
+  <style>
+    /* Infinite scroll animations */
+    @keyframes scrollLeft {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    @keyframes scrollRight {
+      0% {
+        transform: translateX(-50%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    .scroll-row {
+      width: max-content;
+      display: flex;
+      will-change: transform;
+    }
+
+    .scroll-left {
+      animation: scrollLeft 300s linear infinite;
+    }
+
+    .scroll-right {
+      animation: scrollRight 300s linear infinite;
+    }
+
+    /* Optional: Pause animation on hover for better UX */
+    .scroll-row:hover {
+      animation-play-state: paused;
+    }
+  </style>
+</section>
