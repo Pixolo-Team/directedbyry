@@ -8,13 +8,20 @@ const { image_Url, name, job_Designation } = Astro.props;
 ---
 <!-- User Info -->
 <div class=" gap-6 flex flex-row items-center rounded-full ">
-  <div>
-    <!-- User Image -->
-    <img src={image_Url} alt={`image of the ${name}`} class="w-16 h-16 rounded-full border bg-white" />
-  </div>
-  <div class="flex flex-col gap-1 font-sans font-medium leading-tight tracking-normal">
-    <!--User Details  -->
-    <p class=" text-lg ">{name}</p>
-    <p class="text-sm">{job_Designation}</p>
-  </div>
+
+    <div>
+          <!-- User Image -->
+
+          <img src={image_Url} alt={`image of the ${name}`} class="w-16 !h-16 rounded-full border bg-n-50" />
+          
+    </div>
+    <div class="flex flex-col gap-1 font-sans font-medium leading-tight tracking-normal">
+      
+        <!--User Details  -->
+
+        <p class=" text-lg ">{name}</p>
+        <p class="text-sm">{job_Designation}</p>
+
+    </div>
+    
 </div>
