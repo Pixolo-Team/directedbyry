@@ -1,8 +1,7 @@
 ---
 // SectionContent //
 const content = {
-    heroImageDesktop : "/hero-image-desktop.png",
-    heroImageTablet : "/hero-image-tablet.png",
+    heroImage : "/hero-image.png",
     headerContent : {
         title: "नमस्ते",
         subTitle: "I AM RAHUL YADAV"
@@ -24,11 +23,8 @@ const content = {
         <div class="md:relative">
 
             <!-- Hero Image -->
-            <div class="hidden md:block xl:hidden absolute bottom-[33px] left-[391px]">
-                <img src={content.heroImageTablet} width="480px" height="657px" alt="hero-img-tablet" >
-            </div>
-            <div class="hidden xl:block absolute bottom-[-140px] left-[1068px] ">
-                <img src={content.heroImageDesktop} width="656px" height="897px" alt="hero-img" >
+            <div class="hidden md:block absolute bottom-[33px] left-[391px] xl:bottom-[-140px] xl:left-[1068px]">
+                <img src={content.heroImage} class="w-[480px] xl:w-[656px] h-[657px] xl:h-[897px]" alt="hero-img-tablet" >
             </div>
 
             <!-- Text Content -->
