@@ -41,7 +41,7 @@ const navItems = [
       <button
         id="menuToggle"
         class="md:hidden text-[#D4AF37]"
-        onclick="toggleMenu()"
+        onclick="toggleMobileMenu()"
       >
         <svg
           id="menuIcon"
@@ -57,20 +57,20 @@ const navItems = [
             stroke-linejoin="round"
             d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
-        <svg
+        <!-- <svg
           id="closeIcon"
-          xmlns="http://www.w3.org/2000/svg"
           class="w-6 h-6 hidden"
           fill="none"
           stroke="currentColor"
           stroke-width="2"
           viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
             d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
+        </svg> -->
       </button>
     </div>
 
@@ -93,33 +93,40 @@ const navItems = [
   </div>
 </header>
 
-<!-- Lightweight client script -->
 <script>
-  const toggleMenu = () => {
-    const nav = document.getElementById("mobileNav");
-    const menuIcon = document.getElementById("menuIcon");
-    const closeIcon = document.getElementById("closeIcon");
+  // Get references to the elements once
+  const nav = document.getElementById("mobileNav");
+  const menuIcon = document.getElementById("menuIcon");
+
+  const toggleMobileMenu = () => {
+    if (!nav || !menuIcon) return; // Safety check
+
+    // Check if the navigation menu is currently open
     const isOpen = !nav.classList.contains("hidden");
 
     if (isOpen) {
-      nav.classList.add("hidden");
-      menuIcon.classList.remove("hidden");
-      closeIcon.classList.add("hidden");
+      // 1. Menu is OPEN, so we are CLOSING it.
+      nav.classList.add("hidden"); // Hide the navigation menu
+      menuIcon.classList.remove("hidden"); // Show the Hamburger icon
     } else {
-      nav.classList.remove("hidden");
-      menuIcon.classList.add("hidden");
-      closeIcon.classList.remove("hidden");
+      // 2. Menu is CLOSED, so we are OPENING it.
+      nav.classList.remove("hidden"); // Show the navigation menu
+      menuIcon.classList.add("hidden"); // Hide the Hamburger icon
     }
   };
 
+  // The function for when a link is clicked also closes the menu and resets the icons:
   const scrollAndClose = (id) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-    const nav = document.getElementById("mobileNav");
-    const menuIcon = document.getElementById("menuIcon");
-    const closeIcon = document.getElementById("closeIcon");
-    nav.classList.add("hidden");
-    menuIcon.classList.remove("hidden");
-    closeIcon.classList.add("hidden");
+    // ... scroll logic ...
+
+    // Close the menu and reset icons
+    if (nav && menuIcon) {
+      nav.classList.add("hidden");
+      menuIcon.classList.remove("hidden"); // Ensure hamburger is shown
+    }
   };
+
+  // Attach the global functions to the window object
+  window.toggleMobileMenu = toggleMobileMenu;
+  window.scrollAndClose = scrollAndClose;
 </script>

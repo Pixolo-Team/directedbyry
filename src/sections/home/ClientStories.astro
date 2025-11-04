@@ -1,6 +1,52 @@
+---
+const brandFirstRow = [
+  { name: "", image: "/images/brands/asia-cup.png" },
+  { name: "", image: "/images/brands/badshah.png" },
+  { name: "", image: "/images/brands/baggit.png" },
+  { name: "", image: "/images/brands/bharat-sarees.png" },
+  { name: "", image: "/images/brands/bipard.png" },
+  { name: "", image: "/images/brands/campa.png" },
+  { name: "", image: "/images/brands/d-link.png" },
+  { name: "", image: "/images/brands/decor.png" },
+  { name: "", image: "/images/brands/deep-nature.png" },
+  { name: "", image: "/images/brands/dynox.png" },
+  { name: "", image: "/images/brands/enpower.png" },
+  { name: "", image: "/images/brands/fashion.png" },
+  { name: "", image: "/images/brands/flirty-bits.png" },
+  { name: "", image: "/images/brands/gnb.png" },
+  { name: "", image: "/images/brands/good-homes.png" },
+  { name: "", image: "/images/brands/hertz.png" },
+  { name: "", image: "/images/brands/icc-men-world-cup.png" },
+  { name: "", image: "/images/brands/icici.png" },
+  { name: "", image: "/images/brands/indias-future.png" },
+];
+const brandSecondRow = [
+  { name: "", image: "/images/brands/lakme.png" },
+  { name: "", image: "/images/brands/lucknow-super-giants.png" },
+  { name: "", image: "/images/brands/mast-masala.png" },
+  { name: "", image: "/images/brands/mccoy.png" },
+  { name: "", image: "/images/brands/michelin.png" },
+  { name: "", image: "/images/brands/mirror-now.png" },
+  { name: "", image: "/images/brands/nilkamal.png" },
+  { name: "", image: "/images/brands/orivista.png" },
+  { name: "", image: "/images/brands/puneri-paltan.png" },
+  { name: "", image: "/images/brands/ramsons.png" },
+  { name: "", image: "/images/brands/reliance.png" },
+  { name: "", image: "/images/brands/rupay.png" },
+  { name: "", image: "/images/brands/ss.png" },
+  { name: "", image: "/images/brands/syska.png" },
+  { name: "", image: "/images/brands/taiwan.png" },
+  { name: "", image: "/images/brands/talk-to-me.png" },
+  { name: "", image: "/images/brands/undiscover.png" },
+  { name: "", image: "/images/brands/vida.png" },
+  { name: "", image: "/images/brands/xech.png" },
+  { name: "", image: "/images/brands/zoop.png" },
+];
+---
+
 <section class="py-32 px-6 bg-[#0B0B0B] overflow-hidden">
-  <div class="max-w-7xl mx-auto">
-    <div class="mb-20 text-center">
+  <div>
+    <div class="mb-20 text-center max-w-7xl mx-auto">
       <p class="text-2xl text-[#C6A84A] tracking-[0.2em] uppercase mb-4">
         Trusted By
       </p>
@@ -14,9 +60,9 @@
     <div class="mb-8 relative overflow-hidden">
       <div class="scroll-row scroll-left flex gap-8">
         {
-          Array.from({ length: 45 * 2 }).map((_, i) => (
-            <div class="min-w-[200px] aspect-video bg-white/5 backdrop-blur-sm border border-[#D4AF37]/10 flex items-center justify-center hover:border-[#D4AF37]/30 transition-all duration-300 hover:scale-105">
-              <p class="text-white/30 text-sm">Brand {(i % 45) + 1}</p>
+          brandFirstRow.map((brand) => (
+            <div class="w-[200px] h-[150px] bg-[#FFFDE7] backdrop-blur-sm border border-[#D4AF37]/10 flex items-center justify-center hover:border-[#D4AF37]/30 transition-all duration-300 hover:scale-105 py-3 px-6 rounded-3xl">
+              <img src={brand.image} alt={brand.name} class="object-contain" />
             </div>
           ))
         }
@@ -27,17 +73,13 @@
     <div class="relative overflow-hidden">
       <div class="scroll-row scroll-right flex gap-8">
         {
-          Array.from({ length: 45 * 2 }).map((_, i) => (
-            <div class="min-w-[200px] aspect-video bg-white/5 backdrop-blur-sm border border-[#D4AF37]/10 flex items-center justify-center hover:border-[#D4AF37]/30 transition-all duration-300 hover:scale-105">
-              <p class="text-white/30 text-sm">Brand {(i % 45) + 1}</p>
+          brandSecondRow.map((brand) => (
+            <div class="w-[200px] h-[150px] bg-[#FFFDE7] backdrop-blur-sm border border-[#D4AF37]/10 flex items-center justify-center hover:border-[#D4AF37]/30 transition-all duration-300 hover:scale-105 py-3 px-6 rounded-3xl">
+              <img src={brand.image} alt={brand.name} class=" object-contain" />
             </div>
           ))
         }
       </div>
-    </div>
-
-    <div class="mt-12 text-center">
-      <p class="text-white/40 italic">Ready for your brand logos</p>
     </div>
   </div>
 
@@ -68,11 +110,11 @@
     }
 
     .scroll-left {
-      animation: scrollLeft 300s linear infinite;
+      animation: scrollLeft 60s linear infinite;
     }
 
     .scroll-right {
-      animation: scrollRight 300s linear infinite;
+      animation: scrollRight 60s linear infinite;
     }
 
     /* Optional: Pause animation on hover for better UX */
