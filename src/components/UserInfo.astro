@@ -9,6 +9,12 @@ interface Props{
 const {image_Url , name , job_Designation} = Astro.props;
 --- 
 
-<img src={image_Url} alt={`image of the ${name}`} />
-<p>{name}</p>
-<p>{job_Designation}</p>
+<div>
+    <!-- User Image -->
+    <img src={image_Url} alt={`image of the ${name}`} />
+</div>
+<div>
+    <!--User Details  -->
+    <p>{name}</p>
+    <p>{job_Designation}</p>
+</div>

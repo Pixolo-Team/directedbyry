@@ -1,4 +1,5 @@
 ---
+//COMPONENTS
 import UserInfo from "./UserInfo.astro"
 
 const testimonialCardContents= {
@@ -10,9 +11,9 @@ const testimonialCardContents= {
 }
 
 ---
-<!-- Testimonial -->
+<!-- Testimonial-Card-->
 <div class="bg-blue-500">
-    <!-- Name-details  -->
+    <!-- UserDetails -->
     <div>
         <UserInfo 
         image_Url={testimonialCardContents.image_Url} 
@@ -21,9 +22,5 @@ const testimonialCardContents= {
 
     </div>
         <!-- Description -->
-    <div>
-        
          <p>{testimonialCardContents.description}</p>
-
-    </div>
 </div>
