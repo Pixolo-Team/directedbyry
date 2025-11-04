@@ -9,23 +9,25 @@ const story_tagline =
 <!-- Story Section -->
 <section>
   <!-- Container -->
-  <div class="container flex flex-col gap-8 py-28 px-6 bg-n-950">
+  <div class="container mx-auto flex flex-col gap-8 py-28 px-6 bg-n-950 md:gap-16">
     <div class="flex flex-col gap-1">
       <!-- Story Header -->
       <p
-        class="font-serif font-semibold text-3xl leading-tight tracking-normal text-center text-yellow-700"
+        class="font-serif font-semibold text-3xl leading-tight tracking-normal text-center text-yellow-700 md:text-7xl"
       >
         {story_title}
       </p>
       <!-- Story Tagline -->
       <p
-        class="font-light text-base leading-tight tracking-normal text-center text-n-50"
+        class="font-light text-base leading-tight tracking-normal text-center text-n-50  md:text-xl"
       >
         {story_tagline}
       </p>
     </div>
     <!-- Story Cards -->
-    <div class="gap-10 flex flex-col">
+    <div
+      class="flex flex-col lg:flex-row justify-center items-center gap-10 md:gap-14 lg:gap-32 w-full mx-auto"
+    >
       {Array.from({ length: 2 }).map((story, storyIndex) => <StoryCard />)}
     </div>
   </div>
