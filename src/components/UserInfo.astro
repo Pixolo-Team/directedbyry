@@ -10,6 +10,7 @@ const {image_Url , name , job_Designation} = Astro.props;
 --- 
 
 <div>
+    <div>
     <!-- User Image -->
     <img src={image_Url} alt={`image of the ${name}`} />
 </div>
@@ -17,4 +18,5 @@ const {image_Url , name , job_Designation} = Astro.props;
     <!--User Details  -->
     <p>{name}</p>
     <p>{job_Designation}</p>
+</div>
 </div>
