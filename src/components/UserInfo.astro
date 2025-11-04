@@ -6,15 +6,15 @@ interface Props {
 }
 const { image_Url, name, job_Designation } = Astro.props;
 ---
-
-<div>
+<!-- User Info -->
+<div class="w-[278px] h-16 gap-6  flex flex-row items-center ">
   <div>
     <!-- User Image -->
-    <img src={image_Url} alt={`image of the ${name}`} />
+    <img src={image_Url} alt={`image of the ${name}`} class="w-16 h-16 rounded-full border bg-white" />
   </div>
-  <div>
+  <div class="flex flex-col w-[190px] h-[43px] gap-1 font-sans font-medium leading-tight tracking-normal">
     <!--User Details  -->
-    <p>{name}</p>
-    <p>{job_Designation}</p>
+    <p class=" text-lg ">{name}</p>
+    <p class="text-sm">{job_Designation}</p>
   </div>
 </div>
