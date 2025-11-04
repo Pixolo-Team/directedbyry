@@ -8,43 +8,45 @@ const about_me_content = {
 ---
 
 <!-- About Me section -->
-<section class="flex flex-col px-6 bg-n-950">
-  <!-- Wrapper div added for styling -->
-  <div
-    class="container mx-auto flex flex-row w-full h-auto py-11 sm:py-20 lg:py-24 lg:gap-32"
-  >
-    <div class="lg:w-3/5 lg:flex justify-center flex-col gap-8">
-      <!-- Heading -->
-      <p
-        class="font-serif font-semibold text-4xl sm:text-6xl lg:text-7xl leading-tight tracking-normal text-yellow-700"
-      >
-        {about_me_title}
-      </p>
+<section>
+  <div class="flex flex-col px-6 bg-n-950">
+    <!-- Wrapper div added for styling -->
+    <div
+      class="container mx-auto flex flex-row w-full h-auto py-11 sm:py-20 lg:py-24 lg:gap-32"
+    >
+      <div class="lg:w-3/5 lg:flex justify-center flex-col gap-8">
+        <!-- Heading -->
+        <p
+          class="font-serif font-semibold text-4xl sm:text-6xl lg:text-7xl leading-tight tracking-normal text-yellow-700"
+        >
+          {about_me_title}
+        </p>
 
-      <div>
-        <div class="flex flex-col gap-3.5">
-          <!-- Role -->
-          <p
-            class="font-sans font-medium text-sm sm:text-lg lg:text-xl leading-relaxed tracking-normal text-n-50"
-          >
-            {about_me_content.title}
-          </p>
+        <div>
+          <div class="flex flex-col gap-3.5">
+            <!-- Role -->
+            <p
+              class="font-sans font-medium text-sm sm:text-lg lg:text-xl leading-relaxed tracking-normal text-n-50"
+            >
+              {about_me_content.title}
+            </p>
 
-          <!-- Description -->
-          <p
-            class="font-sans font-light text-sm sm:text-base lg:text-xl leading-relaxed tracking-[2%] text-n-50"
-          >
-            {about_me_content.content}
-          </p>
+            <!-- Description -->
+            <p
+              class="font-sans font-light text-sm sm:text-base lg:text-xl leading-relaxed tracking-[2%] text-n-50"
+            >
+              {about_me_content.content}
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- Image Section -->
-    <div
-      class="hidden lg:flex items-center justify-center lg:w-2/5 rotate-[-2.64deg]"
-    >
-      <div class="relative w-full aspect-[3/4] p-3 bg-n-50">
-        <img src="about-me.jpg" alt="Portrait of Creative Director" />
+      <!-- Image Section -->
+      <div class="hidden lg:flex items-center justify-center lg:w-2/5">
+        <img
+          src="about-me.jpg"
+          alt="Portrait of Creative Director"
+          class="w-full aspect-[3/4] rotate-[-2.64deg] object-cover p-3 bg-n-50"
+        />
       </div>
     </div>
   </div>
