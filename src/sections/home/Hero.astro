@@ -1,7 +1,8 @@
 ---
 // SectionContent //
 const content = {
-    heroImage : "/hero-image.png",
+    heroImageDesktop : "/hero-image-desktop.png",
+    heroImageTablet : "/hero-image-tablet.png",
     headerContent : {
         title: "नमस्ते",
         subTitle: "I AM RAHUL YADAV"
@@ -14,18 +15,20 @@ const content = {
 }
 ---
 
-<section class="flex flex-col bg-n-950 md:relative">
+<section>
 
     <!-- Container -->
-    <div class="flex flex-col py-12 xl:py-24 px-6"> <!-- Doubt: Should I have to add this class for tablet: md:px-0 -->
+    <div class="bg-n-950 flex flex-col py-12 xl:py-24 px-6">
 
         <!-- Content -->
-        <div>
+        <div class="md:relative">
 
             <!-- Hero Image -->
-            <div class="hidden md:block absolute bottom-[146px] xl:bottom-[36px] left-[424px] xl:left-[1260px] bg-radial from-[#00000000] from-0% to-[#020617]">
-                <!-- Doubt: I am unable to understand how to add this radial gradient and responsive size for image -->
-                <img src={content.heroImage} class="w-[480px] h-[657px] xl:w-[656px] xl:h-[897px]" alt="hero-img" >
+            <div class="hidden md:block xl:hidden absolute bottom-[33px] left-[391px]">
+                <img src={content.heroImageTablet} width="480px" height="657px" alt="hero-img-tablet" >
+            </div>
+            <div class="hidden xl:block absolute bottom-[-140px] left-[1068px] ">
+                <img src={content.heroImageDesktop} width="656px" height="897px" alt="hero-img" >
             </div>
 
             <!-- Text Content -->
@@ -33,13 +36,12 @@ const content = {
 
                 <!-- Section Header -->
                 <div class="flex flex-col z-10">
-                    <p class="font-[ABeeZee] font-normal text-2xl xl:text-5xl leading-tight text-yellow-700">{content.headerContent.title}</p>
+                    <p class="font-[ABeeZee] font-normal text-2xl md:text-4xl xl:text-5xl leading-tight text-yellow-700">{content.headerContent.title}</p>
                     <p class="font-serif font-extrabold text-4xl md:text-7xl xl:text-8xl leading-tight text-yellow-700 tracking-[-4%]">{content.headerContent.subTitle}</p>
                 </div>
 
                 <!-- Hero Content -->
-                <div class="flex flex-col gap-4 md:gap-7 font-sans font-light text-sm xl:text-2xl leading-normal text-n-100 md:text-n-50 md:w-[502px] xl:w-full z-10"> 
-                    <!-- Told to keep text smaller so kept same as mobile one text-sm -->
+                <div class="flex flex-col gap-4 md:gap-7 font-sans font-light text-sm xl:text-2xl leading-normal text-n-100 md:text-n-50 md:w-[502px] xl:w-full z-10">
                     <p >{content.heroContent.paragraph1}</p>
                     <p >{content.heroContent.paragraph2}</p>
                     <p >{content.heroContent.paragraph3}</p>
@@ -49,9 +51,9 @@ const content = {
         </div>
 
         <!-- Scroll -->
-        <div class="flex flex-col m-auto items-center xl:w-20 z-10">
+        <div class="flex flex-col m-auto items-center xl:w-20">
             <p class="font-sans font-light text-sm md:text-lg xl:text-xl leading-normal text-n-100 md:text-n-50">SCROLL</p>
-            <img src="/down-arrow.svg" class="size-[24px] md:size-[32px] xl:size-[44px]" alt="down-arrow-svg" > <!-- Doubt: height is not setting to 32px bcoz of height auto in global css -->
+            <img src="/down-arrow.svg" class="size-[24px] md:size-[32px] xl:size-[44px]" alt="down-arrow-svg" >
         </div>
 
     </div>
