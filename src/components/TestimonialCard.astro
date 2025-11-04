@@ -1,24 +1,29 @@
 ---
+import UserInfo from "./UserInfo.astro"
+
 const testimonialCardContents= {
+    image_Url: "/testimonial-card-image.jpg",
     name:"Nishant Jethva",
     job_Designation:"Founder - Postboy Studios",
     description :"Working with Rahul Yadav is always inspiring. As a director, he blends creativity, dedication, and versatility seamlessly. He doesn’t just execute a script — he elevates it with imagination and depth. With a keen visual sense and “jugaadu” problem-solving, Rahul brings every frame to life without compromising on quality. His commitment, eye for detail, and collaborative spirit make him a director you can truly trust."
 
 }
+
 ---
+<!-- Testimonial -->
 <div class="bg-blue-500">
-    <!-- start of the testimonial card -->
-    <div >
-        <!-- ProfileImage , Name and details -->
-         <img src="/testimonial-card-image.jpg"/>
-         <p>{testimonialCardContents.name}</p>
-         <p>{testimonialCardContents.job_Designation}</p>
+    <!-- Name-details  -->
+    <div>
+        <UserInfo 
+        image_Url={testimonialCardContents.image_Url} 
+        name={testimonialCardContents.name} 
+        job_Designation={testimonialCardContents.job_Designation}/>
 
     </div>
+        <!-- Description -->
     <div>
-        <!-- Content -->
+        
          <p>{testimonialCardContents.description}</p>
 
     </div>
-    <!-- End of the testimonial card -->
 </div>
