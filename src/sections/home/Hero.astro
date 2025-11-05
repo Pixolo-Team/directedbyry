@@ -14,30 +14,30 @@ const content = {
 }
 ---
 
-<section class="flex flex-col bg-n-950">
+<section>
 
     <!-- Container -->
-    <div class="flex flex-col py-12 px-6">
+    <div class="bg-n-950 flex flex-col py-12 xl:py-24 px-6 mx-auto container">
 
         <!-- Content -->
-        <div class="">
+        <div class="md:relative">
 
             <!-- Hero Image -->
-            <div class="hidden">
-                <img src={content.heroImage} alt="hero-img" width="" height="">
+            <div class="hidden md:block absolute bottom-[33px] xl:bottom-[-140px] right-[-103px]  xl:right-[-188px]">
+                <img src={content.heroImage} class="w-[480px] xl:w-[656px]" alt="hero-img-tablet" >
             </div>
 
             <!-- Text Content -->
-            <div class="flex flex-col py-9 gap-6">
+            <div class="flex flex-col py-9 md:py-16 xl:py-24 xl:pl-28 gap-6 md:gap-9 xl:gap-10 xl:w-2/3">
 
                 <!-- Section Header -->
-                <div class="flex flex-col">
-                    <p class="font-[ABeeZee] font-normal text-2xl leading-tight text-yellow-700">{content.headerContent.title}</p>
-                    <p class="font-serif font-extrabold text-4xl leading-tight text-yellow-700 tracking-[-4%]">{content.headerContent.subTitle}</p>
+                <div class="flex flex-col z-10">
+                    <p class="font-[ABeeZee] font-normal text-2xl md:text-4xl xl:text-5xl leading-tight text-yellow-700">{content.headerContent.title}</p>
+                    <p class="font-serif font-extrabold text-4xl md:text-7xl xl:text-8xl leading-tight text-yellow-700 tracking-[-4%]">{content.headerContent.subTitle}</p>
                 </div>
 
                 <!-- Hero Content -->
-                <div class="flex flex-col gap-4 font-sans font-light text-sm leading-normal text-n-100">
+                <div class="flex flex-col gap-4 md:gap-7 font-sans font-light text-sm md:text-lg xl:text-2xl leading-normal text-n-100 md:text-n-50 md:w-[460px] xl:w-full z-10">
                     <p >{content.heroContent.paragraph1}</p>
                     <p >{content.heroContent.paragraph2}</p>
                     <p >{content.heroContent.paragraph3}</p>
@@ -47,9 +47,11 @@ const content = {
         </div>
 
         <!-- Scroll -->
-        <div class="flex flex-col m-auto items-center">
-            <p class="font-sans font-light text-sm leading-normal text-n-100">SCROLL</p>
-            <img src="/down-arrow.svg" alt="down-arrow-svg" width="24px" height="24px">
+        <div class="flex flex-col m-auto items-center xl:w-20 text-n-100 md:text-n-50">
+            <p class="font-sans font-light text-sm md:text-lg xl:text-xl leading-normal">SCROLL</p>
+            <svg class="w-[10px] md:w-[14px] xl:w-[16px]" viewBox="0 0 18 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 1V23M9 23L1 13.8333M9 23L17 13.8333" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
         </div>
 
     </div>
