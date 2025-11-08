@@ -137,7 +137,6 @@ const portfolioItems = [
     videoUrl: "https://youtube.com/@rymarkfilms",
   },
 ];
-
 ---
 
 <Layout>
@@ -148,10 +147,10 @@ const portfolioItems = [
 
   <BrandMeaningSection />
   <!-- Services -->
-  <section id="services" class="py-32 px-6 bg-[#0B0B0B]">
-    <div class="max-w-7xl mx-auto">
-      <h2 class="text-4xl text-[#C6A84A] mb-12">360° Creative Solutions</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+  <section id="services" class="bg-[#0B0B0B] px-6 py-32">
+    <div class="mx-auto max-w-7xl">
+      <h2 class="mb-12 text-4xl text-[#C6A84A]">360° Creative Solutions</h2>
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {
           services.map((service) => (
             <ServiceCard
