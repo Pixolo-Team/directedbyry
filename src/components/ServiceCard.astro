@@ -1,0 +1,54 @@
+---
+const { title, description, videoUrl } = Astro.props;
+---
+
+<div
+  class={`group relative overflow-hidden border border-[#D4AF37]/20 bg-[#0B0B0B]/50 backdrop-blur-sm p-8 transition-all duration-300 hover:border-[#D4AF37] hover:bg-[#0B0B0B] hover:scale-105 ${videoUrl ? "cursor-pointer" : ""}`}
+  onclick={videoUrl
+    ? `window.open('${videoUrl}', '_blank', 'noopener,noreferrer')`
+    : undefined}
+>
+  <div class="space-y-4">
+    <div class="flex items-start justify-between">
+      <h3
+        class="text-2xl text-white group-hover:text-[#D4AF37] transition-colors"
+      >
+        {title}
+      </h3>
+
+      {
+        videoUrl && (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5 text-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M18 13V6a1 1 0 0 0-1-1h-7m10 10l-11-11m0 0L3 7l11 11"
+            />
+          </svg>
+        )
+      }
+    </div>
+
+    <p class="text-white/60 leading-relaxed">{description}</p>
+
+    {
+      videoUrl && (
+        <p class="text-[#D4AF37] text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+          View Portfolio →
+        </p>
+      )
+    }
+  </div>
+
+  <div
+    class="absolute inset-0 bg-gradient-to from-[#D4AF37]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
+  >
+  </div>
+</div>

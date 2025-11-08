@@ -1,0 +1,187 @@
+---
+// src/components/Work.astro
+// Props:
+// - portfolioItems: Array of { title, category, image, videoUrl }
+// - duration: animation duration in seconds (number, optional)
+
+const { portfolioItems = null, duration = 50 } = Astro.props;
+
+// fallback sample items if none provided
+const defaultItems = [
+  {
+    title: "Project One",
+    category: "Branding",
+    image: "/images/sample-1.jpg",
+    videoUrl: "https://example.com/project-one",
+  },
+  {
+    title: "Project Two",
+    category: "Motion",
+    image: "/images/sample-2.jpg",
+    videoUrl: "https://example.com/project-two",
+  },
+  {
+    title: "Project Three",
+    category: "Product",
+    image: "/images/sample-3.jpg",
+    videoUrl: "https://example.com/project-three",
+  },
+];
+
+const items =
+  portfolioItems && portfolioItems.length ? portfolioItems : defaultItems;
+// duplicate list for seamless scroll
+const looped = [...items, ...items];
+const dur = Number(duration) || 50;
+---
+
+<section id="work" class="py-32 px-6 bg-[#C6A84A] overflow-hidden">
+  <div>
+    <div class="mb-20 text-center max-w-7xl mx-auto">
+      <p class="text-2xl text-white tracking-[0.2em] uppercase mb-4">
+        Portfolio
+      </p>
+      <h2 class="text-4xl md:text-5xl lg:text-6xl text-[#0B0B0B] mb-6">
+        Frames That Tell Stories
+      </h2>
+      <div class="h-px w-24 bg-[#0B0B0B] mx-auto"></div>
+    </div>
+
+    <!-- First Row - Scrolling Right to Left -->
+    <div class="mb-8 relative">
+      <div class="scroll-viewport">
+        <div
+          class="scroll-track"
+          style={`animation-duration: ${dur}s;`}
+          aria-hidden="true"
+        >
+          {
+            looped.map((item, i) => (
+              <a
+                class="w-[300px] aspect-[4/3]  bg-[#0B0B0B] border border-[#0B0B0B]/20 overflow-hidden cursor-pointer group relative transition-transform duration-300 hover:scale-105"
+                href={item.videoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                key={i}
+              >
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0B0B0B] via-[#0B0B0B]/60 to-transparent opacity-80 group-hover:opacity-60 transition-opacity">
+                  <div class="absolute bottom-0 left-0 right-0 p-6">
+                    <p class="text-[#D4AF37] text-sm tracking-wider mb-2">
+                      {item.category}
+                    </p>
+                    <h3 class="text-white text-xl">{item.title}</h3>
+                    <p class="text-[#D4AF37] text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                      View Project →
+                    </p>
+                  </div>
+                </div>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Row - Scrolling Left to Right -->
+    <div class="relative">
+      <div class="scroll-viewport">
+        <div
+          class="scroll-track reverse"
+          style={`animation-duration: ${dur}s;`}
+          aria-hidden="true"
+        >
+          {
+            looped.map((item, i) => (
+              <a
+                class="w-[300px] aspect-[4/3]  bg-[#0B0B0B] border border-[#0B0B0B]/20 overflow-hidden cursor-pointer group relative transition-transform duration-300 hover:scale-105"
+                href={item.videoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                key={`r-${i}`}
+              >
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0B0B0B] via-[#0B0B0B]/60 to-transparent opacity-80 group-hover:opacity-60 transition-opacity">
+                  <div class="absolute bottom-0 left-0 right-0 p-6">
+                    <p class="text-[#D4AF37] text-sm tracking-wider mb-2">
+                      {item.category}
+                    </p>
+                    <h3 class="text-white text-xl">{item.title}</h3>
+                    <p class="text-[#D4AF37] text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                      View Project →
+                    </p>
+                  </div>
+                </div>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 text-center">
+      <p class="text-white">Click on any project to view full work</p>
+    </div>
+  </div>
+</section>
+
+<style lang="css">
+  /* A narrow viewport clipped container so children can scroll through */
+  .scroll-viewport {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  /* track holds the repeated items in a single row */
+  .scroll-track {
+    display: flex;
+    gap: 1.5rem; /* matches gap-6 */
+    align-items: stretch;
+    /* ensure combined width is larger than container so translate works */
+    width: max-content;
+    animation-name: scroll-left;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  /* reverse direction for the second row */
+  .scroll-track.reverse {
+    animation-name: scroll-right;
+  }
+
+  /* Keyframes — move exactly half the width (since items are duplicated) */
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes scroll-right {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  /* Make the repeated set seamless: ensure each item is rendered inline and duplicated */
+  .scroll-track > a {
+    flex: 0 0 auto;
+  }
+
+  /* small accessibility: hide tracks from assistive tech since links are duplicated; real links still accessible through normal DOM order */
+  .scroll-track[aria-hidden="true"] {
+    pointer-events: auto; /* keep links clickable */
+  }
+</style>
