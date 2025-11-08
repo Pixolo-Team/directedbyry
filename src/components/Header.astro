@@ -1,0 +1,132 @@
+---
+const navItems = [
+  { label: "Services", id: "services" },
+  { label: "Work", id: "work" },
+  { label: "Contact", id: "contact" },
+];
+---
+
+<header
+  class="fixed top-0 left-0 right-0 z-50 bg-[#0B0B0B]/98 backdrop-blur-md border-b border-[#D4AF37]/10 supports-[backdrop-filter]:bg-[#0B0B0B]/70"
+>
+  <div class="max-w-7xl mx-auto px-6 py-5">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <button
+        class="group"
+        onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+      >
+        <img
+          src={"/images/logo.png"}
+          alt="Rymark Films"
+          class="w-18 transition-transform duration-300 group-hover:scale-105"
+        />
+      </button>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-16">
+        {
+          navItems.map((item) => (
+            <button
+              onclick={`document.getElementById('${item.id}').scrollIntoView({ behavior: 'smooth' })`}
+              class="text-white/70 hover:text-[#D4AF37] transition-all duration-300 tracking-widest uppercase hover:scale-110"
+            >
+              {item.label}
+            </button>
+          ))
+        }
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="menuToggle"
+        class="md:hidden text-[#D4AF37]"
+        onclick="toggleMobileMenu()"
+      >
+        <svg
+          id="menuIcon"
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <!-- <svg
+          id="closeIcon"
+          class="w-6 h-6 hidden"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg> -->
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav
+      id="mobileNav"
+      class="hidden md:hidden mt-6 pt-6 border-t border-[#D4AF37]/10 flex flex-col gap-6"
+    >
+      {
+        navItems.map((item) => (
+          <button
+            onclick={`scrollAndClose('${item.id}')`}
+            class="text-white/60 hover:text-[#D4AF37] transition-colors text-left tracking-wider uppercase"
+          >
+            {item.label}
+          </button>
+        ))
+      }
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Get references to the elements once
+  const nav = document.getElementById("mobileNav");
+  const menuIcon = document.getElementById("menuIcon");
+
+  const toggleMobileMenu = () => {
+    if (!nav || !menuIcon) return; // Safety check
+
+    // Check if the navigation menu is currently open
+    const isOpen = !nav.classList.contains("hidden");
+
+    if (isOpen) {
+      // 1. Menu is OPEN, so we are CLOSING it.
+      nav.classList.add("hidden"); // Hide the navigation menu
+      menuIcon.classList.remove("hidden"); // Show the Hamburger icon
+    } else {
+      // 2. Menu is CLOSED, so we are OPENING it.
+      nav.classList.remove("hidden"); // Show the navigation menu
+      menuIcon.classList.add("hidden"); // Hide the Hamburger icon
+    }
+  };
+
+  // The function for when a link is clicked also closes the menu and resets the icons:
+  const scrollAndClose = (id) => {
+    // ... scroll logic ...
+
+    // Close the menu and reset icons
+    if (nav && menuIcon) {
+      nav.classList.add("hidden");
+      menuIcon.classList.remove("hidden"); // Ensure hamburger is shown
+    }
+  };
+
+  // Attach the global functions to the window object
+  window.toggleMobileMenu = toggleMobileMenu;
+  window.scrollAndClose = scrollAndClose;
+</script>
