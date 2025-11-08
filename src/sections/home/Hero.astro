@@ -1,56 +1,22 @@
----
-// SectionContent //
-const content = {
-    heroImage : "/hero-image.png",
-    headerContent : {
-        title: "नमस्ते",
-        subTitle: "I AM RAHUL YADAV"
-    },
-    heroContent : {
-        paragraph1 : "A Creative Director shaping stories across films, ads, and everything in between. With years of experience behind the camera and in the edit room, I thrive on crafting visuals that don’t just look good—they make people feel something.",
-        paragraph2 : "From cinematic films to fast-paced commercials, I bring together strategy, storytelling, and style to turn ideas into memorable experiences. My work is equal parts creative spark and disciplined craft—always chasing the balance between vision and execution.",
-        paragraph3 : "Currently, I’m collaborating with brands, agencies, and production houses to create films and campaigns that stick with audiences long after the screen fades to black."
-    }
-}
----
-
-<section class="flex flex-col bg-n-950">
-
-    <!-- Container -->
-    <div class="flex flex-col py-12 px-6">
-
-        <!-- Content -->
-        <div class="">
-
-            <!-- Hero Image -->
-            <div class="hidden">
-                <img src={content.heroImage} alt="hero-img" width="" height="">
-            </div>
-
-            <!-- Text Content -->
-            <div class="flex flex-col py-9 gap-6">
-
-                <!-- Section Header -->
-                <div class="flex flex-col">
-                    <p class="font-[ABeeZee] font-normal text-2xl leading-tight text-yellow-700">{content.headerContent.title}</p>
-                    <p class="font-serif font-extrabold text-4xl leading-tight text-yellow-700 tracking-[-4%]">{content.headerContent.subTitle}</p>
-                </div>
-
-                <!-- Hero Content -->
-                <div class="flex flex-col gap-4 font-sans font-light text-sm leading-normal text-n-100">
-                    <p >{content.heroContent.paragraph1}</p>
-                    <p >{content.heroContent.paragraph2}</p>
-                    <p >{content.heroContent.paragraph3}</p>
-                </div>
-                 
-            </div>
-        </div>
-
-        <!-- Scroll -->
-        <div class="flex flex-col m-auto items-center">
-            <p class="font-sans font-light text-sm leading-normal text-n-100">SCROLL</p>
-            <img src="/down-arrow.svg" alt="down-arrow-svg" width="24px" height="24px">
-        </div>
-
-    </div>
+<section
+  class="bg-[#0B0B0B] relative min-h-screen flex items-center justify-center px-6 pt-20"
+>
+  <div class="max-w-6xl mx-auto text-center">
+    <img
+      src={"/images/logo.png"}
+      alt="Rymark Films"
+      class="w-[40%] mx-auto mb-8 hover:scale-105 transition-transform duration-300"
+    />
+    <h1 class="text-5xl md:text-7xl text-white mb-8 leading-[1.1]">
+      THE MARK OF A<br />
+      <span class="text-[#D4AF37]">REMARKABLE STORY</span>
+    </h1>
+    <div class="w-32 h-px bg-[#D4AF37] mx-auto mb-8"></div>
+    <p
+      class="text-xl md:text-2xl text-white/70 max-w-3xl mx-auto leading-relaxed"
+    >
+      A 360° creative production studio crafting cinematic experiences that
+      move, inspire, and endure.
+    </p>
+  </div>
 </section>

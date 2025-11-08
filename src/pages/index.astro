@@ -1,26 +1,172 @@
 ---
-// COMPONENTS //
-import StoryCard from "../components/StoryCard.astro";
-
-// OTHERS //
+import ServiceCard from "../components/ServiceCard.astro";
+// import ImageWithFallback from "../components/figma/ImageWithFallback.astro";
 import Layout from "../layouts/Layout.astro";
+import BrandMeaningSection from "../sections/home/BrandMeaning.astro";
+import HeroSection from "../sections/home/Hero.astro";
+import ShowreelSection from "../sections/home/Showreel.astro";
+import FounderSection from "../sections/home/Founder.astro";
+import ContactSection from "../sections/home/Contact.astro";
+import Work from "../sections/home/Work.astro";
+import ClientStories from "../sections/home/ClientStories.astro";
 
-// SECTIONS //
-import Hero from "../sections/home/Hero.astro";
-import Testimonial from "../sections/home/Testimonial.astro";
-import AboutMe from "../sections/home/aboutMe.astro";
+// Data
+const services = [
+  {
+    title: "Ad Films & DVCs",
+    description:
+      "Cinematic storytelling that drives brand impact and ROI. From concept to final cut.",
+    videoUrl: "https://youtube.com/@rymarkfilms", // Replace with actual portfolio link
+  },
+  {
+    title: "Corporate Films",
+    description:
+      "Professional narratives that elevate your brand story and corporate communication.",
+    videoUrl: "https://youtube.com/@rymarkfilms", // Replace with actual portfolio link
+  },
+  {
+    title: "Photography & Cinematography",
+    description:
+      "Every frame crafted with precision. Visual excellence that captures your essence.",
+    videoUrl: "https://youtube.com/@rymarkfilms", // Replace with actual portfolio link
+  },
+  {
+    title: "Sports Broadcast & Live Events",
+    description:
+      "Dynamic coverage that brings the energy and excitement to your audience in real-time.",
+    videoUrl: "https://youtube.com/@rymarkfilms", // Replace with actual portfolio link
+  },
+  {
+    title: "Social Media Campaigns",
+    description:
+      "Viral-ready content designed to engage, inspire, and build communities.",
+    videoUrl: "https://youtube.com/@rymarkfilms", // Replace with actual portfolio link
+  },
+  {
+    title: "Documentaries",
+    description:
+      "Authentic narratives that explore stories, cultures, and moments that matter.",
+    videoUrl: "https://youtube.com/@rymarkfilms", // Replace with actual portfolio link
+  },
+];
+
+const portfolioItems = [
+  {
+    title: "Premium Brand Launch",
+    category: "Ad Films & DVCs",
+    image:
+      "https://images.unsplash.com/photo-1691180273080-aacef51379d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaWxtJTIwcHJvZHVjdGlvbiUyMGNhbWVyYXxlbnwxfHx8fDE3NjE1ODE5MTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    videoUrl: "https://youtube.com/@rymarkfilms",
+  },
+  {
+    title: "Corporate Vision",
+    category: "Corporate Films",
+    image:
+      "https://images.unsplash.com/photo-1608908272009-5834650fb600?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBidXNpbmVzcyUyMG1lZXRpbmd8ZW58MXx8fHwxNzYxNTg1NTUyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    videoUrl: "https://youtube.com/@rymarkfilms",
+  },
+  {
+    title: "Studio Excellence",
+    category: "Brand Films & Cinematography",
+    image:
+      "https://images.unsplash.com/photo-1668453814676-c8093305fae6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwaG90b2dyYXBoeSUyMHN0dWRpb3xlbnwxfHx8fDE3NjE1NTgwODN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    videoUrl: "https://youtube.com/@rymarkfilms",
+  },
+  {
+    title: "Championship Finals",
+    category: "Sports Broadcast & Live Events",
+    image:
+      "https://images.unsplash.com/photo-1650289246926-ca8eaa0c3325?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcG9ydHMlMjBzdGFkaXVtJTIwYWN0aW9ufGVufDF8fHx8MTc2MTU1NjU1NHww&ixlib=rb-4.1.0&q=80&w=1080",
+    videoUrl: "https://youtube.com/@rymarkfilms",
+  },
+  {
+    title: "Viral Content Series",
+    category: "Social Media Campaigns",
+    image:
+      "https://images.unsplash.com/photo-1611926653458-09294b3142bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb2NpYWwlMjBtZWRpYSUyMGNvbnRlbnR8ZW58MXx8fHwxNzYxNTE4NTIyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    videoUrl: "https://youtube.com/@rymarkfilms",
+  },
+  {
+    title: "Human Stories",
+    category: "Documentaries & Backstories",
+    image:
+      "https://images.unsplash.com/photo-1612872750175-5b67ab0a6011?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkb2N1bWVudGFyeSUyMGZpbG1pbmd8ZW58MXx8fHwxNzYxNTIzNDU2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    videoUrl: "https://youtube.com/@rymarkfilms",
+  },
+  {
+    title: "Cinematic Masterpiece",
+    category: "Ad Films & DVCs",
+    image:
+      "https://images.unsplash.com/photo-1706073310908-e984f35dc2b9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaW5lbWF0aWMlMjBsaWdodGluZ3xlbnwxfHx8fDE3NjE1MjQwNzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    videoUrl: "https://youtube.com/@rymarkfilms",
+  },
+  {
+    title: "Production Set",
+    category: "Corporate Films",
+    image:
+      "https://images.unsplash.com/photo-1639701386739-449a0e789367?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aWRlbyUyMHByb2R1Y3Rpb24lMjBzZXR8ZW58MXx8fHwxNzYxNTg1NTU0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    videoUrl: "https://youtube.com/@rymarkfilms",
+  },
+  {
+    title: "Event Coverage",
+    category: "Sports Broadcast & Live Events",
+    image:
+      "https://images.unsplash.com/photo-1614607653708-0777e6d003b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxldmVudCUyMHBob3RvZ3JhcGh5fGVufDF8fHx8MTc2MTU3MjMwNnww&ixlib=rb-4.1.0&q=80&w=1080",
+    videoUrl: "https://youtube.com/@rymarkfilms",
+  },
+  {
+    title: "Brand Storytelling",
+    category: "Ad Films & DVCs",
+    image:
+      "https://images.unsplash.com/photo-1607292819104-c54624be6bc2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxicmFuZCUyMGFkdmVydGlzaW5nJTIwc2hvb3R8ZW58MXx8fHwxNzYxNTg1NTU0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    videoUrl: "https://youtube.com/@rymarkfilms",
+  },
+  {
+    title: "Music Production",
+    category: "Social Media Campaigns",
+    image:
+      "https://images.unsplash.com/photo-1674124504779-62197c204390?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtdXNpYyUyMHZpZGVvJTIwcHJvZHVjdGlvbnxlbnwxfHx8fDE3NjE1NDA0MDB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    videoUrl: "https://youtube.com/@rymarkfilms",
+  },
+  {
+    title: "Fashion Campaign",
+    category: "Photography & Cinematography",
+    image:
+      "https://images.unsplash.com/photo-1704208316515-a32f81e373ef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmYXNoaW9uJTIwcGhvdG9ncmFwaHl8ZW58MXx8fHwxNzYxNTg1NTU0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    videoUrl: "https://youtube.com/@rymarkfilms",
+  },
+];
+
 ---
 
 <Layout>
-  <Hero />
-  <AboutMe />
-  <Testimonial />
-  <StoryCard />
-  <img src="/dbry-2.png" alt="" class="w-full" />
-  <img src="/dbry-3.png" alt="" class="w-full" />
-  <img src="/dbry-4.png" alt="" class="w-full" />
-  <img src="/dbry-5.png" alt="" class="w-full" />
-  <img src="/dbry-6.png" alt="" class="w-full" />
-  <img src="/contact.png" alt="" class="w-full" />
-  <p class="font-serif">Whatsapp</p>
+  <!-- Hero Section -->
+  <HeroSection />
+
+  <ShowreelSection />
+
+  <BrandMeaningSection />
+  <!-- Services -->
+  <section id="services" class="py-32 px-6 bg-[#0B0B0B]">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-4xl text-[#C6A84A] mb-12">360° Creative Solutions</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          services.map((service) => (
+            <ServiceCard
+              title={service.title}
+              description={service.description}
+              videoUrl={service.videoUrl}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <Work portfolioItems={portfolioItems} duration={50} />
+  <ClientStories />
+  <FounderSection />
+
+  <ContactSection />
 </Layout>
