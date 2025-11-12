@@ -4,39 +4,39 @@ import TestimonialCard from "../../components/TestimonialCard.astro";
 
 const testimonials = [
   {
-    image_Url: "/testimonial-card-image.jpg",
+    image_Url: "/images/vijay.png",
+    name: "Vijay Sokhi",
+    job_Designation: "Director - Sharp Consulting & Implementing Company",
+    description:
+      "Rahul is a thoughtful person who has extreme clarity of what is expected out of him. He has elegantly made an ad film for a client of mine which was just a class apart. Rahul is a bankable person who can deliver more than what is expected.",
+  },
+  {
+    image_Url: "/images/nishant.png",
     name: "Nishant Jethva",
-    job_Designation: "Founder - Postboy Studios",
+    job_Designation: "Founder, Post Boy Studios",
     description:
       "Working with Rahul Yadav is always inspiring. As a director, he blends creativity, dedication, and versatility seamlessly. He doesn’t just execute a script — he elevates it with imagination and depth. With a keen visual sense and “jugaadu” problem-solving, Rahul brings every frame to life without compromising on quality. His commitment, eye for detail, and collaborative spirit make him a director you can truly trust.",
   },
+
   {
-    image_Url: "/testimonial-card-image.jpg",
-    name: "Aarav Mehta",
-    job_Designation: "Producer - Cineworks",
+    image_Url: "/images/kaveri.png",
+    name: "Kaveri Mehrotra",
+    job_Designation:
+      "Creative Consultant, Director & Producer – Series Films and Documentary",
     description:
-      "Rahul’s vision and leadership on set are unmatched. His ability to bring out raw emotion while maintaining technical precision makes him an absolute joy to work with.",
+      "Rahul is a problem solver and has been a support in challenging situations in the project we collaborated on. Apart from directorial skills, he is able to take the load off the producer and handle logistics in the best way for the project. He is committed to be there till the bitter end and will make sure all aspects of the project are taken care of for a wholesome final delivery.",
   },
   {
-    image_Url: "/testimonial-card-image.jpg",
-    name: "Priya Sharma",
+    name: "Mahesh Pednekar",
     job_Designation: "Cinematographer",
     description:
       "Every project with Rahul turns into a creative adventure. His clarity of thought and deep respect for the crew make every frame a masterpiece in motion.",
   },
   {
-    image_Url: "/testimonial-card-image.jpg",
-    name: "Aarav Mehta",
+    name: "Abhijeet Utekar",
     job_Designation: "Producer - Cineworks",
     description:
       "Rahul’s vision and leadership on set are unmatched. His ability to bring out raw emotion while maintaining technical precision makes him an absolute joy to work with.",
-  },
-  {
-    image_Url: "/testimonial-card-image.jpg",
-    name: "Priya Sharma",
-    job_Designation: "Cinematographer",
-    description:
-      "Every project with Rahul turns into a creative adventure. His clarity of thought and deep respect for the crew make every frame a masterpiece in motion.",
   },
 ];
 
@@ -44,14 +44,18 @@ const uid = "embla-testimonials";
 ---
 
 <section class="ts-slider">
-  <div class="container mx-auto flex flex-col gap-8 md:gap-10 lg:gap-16 px-6 py-20">
+  <div
+    class="container mx-auto flex flex-col gap-8 px-6 py-20 md:gap-10 lg:gap-16"
+  >
     <div class="text-center">
       <p
-        class="font-serif font-semibold text-4xl leading-tight tracking-normal text-yellow-700 md:text-6xl lg:text-7xl"
+        class="font-serif text-4xl leading-tight font-semibold tracking-normal text-yellow-700 md:text-6xl lg:text-7xl"
       >
         Testimonials
       </p>
-      <p class="font-light text-sm md:text-lg lg:text-xl leading-tight text-n-50">
+      <p
+        class="text-n-50 text-sm leading-tight font-light md:text-lg lg:text-xl"
+      >
         Voices of excellence from my collaborators
       </p>
     </div>
@@ -59,7 +63,7 @@ const uid = "embla-testimonials";
     <!-- Embla Root -->
     <div data-embla-root id={uid} class="space-y-7 md:space-y-9">
       <!-- Viewport -->
-      <div class="overflow-hidden space-x-8" data-embla-viewport>
+      <div class="space-x-8 overflow-hidden" data-embla-viewport>
         <!-- Container -->
         <div class="flex gap-8" data-embla-container>
           {
@@ -78,13 +82,9 @@ const uid = "embla-testimonials";
       </div>
 
       <!-- Buttons wrap -->
-      <div class="flex gap-8 justify-end">
+      <div class="flex justify-end gap-8">
         <!-- Left Arrow -->
-        <button
-          type="button"
-          data-embla-prev
-          aria-label="Previous"
-        >
+        <button type="button" data-embla-prev aria-label="Previous">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -100,11 +100,7 @@ const uid = "embla-testimonials";
         </button>
 
         <!-- Right Arrow -->
-        <button
-          type="button"
-          data-embla-next
-          aria-label="Next"
-        >
+        <button type="button" data-embla-next aria-label="Next">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -112,7 +108,6 @@ const uid = "embla-testimonials";
             viewBox="0 0 20 20"
             fill="none"
             class="text-n-50 hover:text-yellow-700"
-
           >
             <path
               d="M6.25 19.1667C5.92784 19.4888 5.4055 19.4888 5.08333 19.1667C4.76117 18.8445 4.76117 18.3222 5.08333 18L10.962 12.1213C12.1336 10.9497 12.1336 9.05025 10.962 7.87868L5.08333 2C4.76117 1.67783 4.76117 1.1555 5.08333 0.833334C5.4055 0.511167 5.92783 0.511167 6.25 0.833334L13.2953 7.87868C14.4669 9.05025 14.4669 10.9497 13.2953 12.1213L6.25 19.1667Z"
