@@ -1,23 +1,33 @@
 ---
 interface Props {
-  image_Url: string;
+  image_Url?: string;
   name: string;
   job_Designation: string;
 }
-const { image_Url, name, job_Designation } = Astro.props;
+const { image_Url = "", name, job_Designation } = Astro.props;
 ---
 
 <!-- User Info -->
-<div class="gap-6 flex flex-row items-center rounded-full">
-  <div class="size-16 lg:size-20 rounded-full overflow-hidden border">
+<div class="flex flex-row items-center gap-6 rounded-full">
+  <div class="size-16 overflow-hidden rounded-full border lg:size-20">
     <!-- User Image -->
-    <img src={image_Url} alt={`image of the ${name}`} class="object-contain" />
+    <img
+      src={image_Url !== "" ? image_Url : "/images/default-profile.png"}
+      alt={`image of the ${name}`}
+      class="object-contain"
+    />
   </div>
   <div
-    class="flex flex-col gap-1 font-sans font-medium leading-tight tracking-normal"
+    class="flex flex-1 flex-col gap-1 font-sans leading-tight font-medium tracking-normal"
   >
     <!--User Details  -->
-    <p class="font-sans text-lg md:text-xl lg:text-2xl font-medium leading-tight">{name}</p>
-    <p class="text-sm md:text-base lg:text-lg font-medium leading-tight">{job_Designation}</p>
+    <p
+      class="font-sans text-lg leading-tight font-medium md:text-xl lg:text-2xl"
+    >
+      {name}
+    </p>
+    <p class="text-sm leading-tight font-medium md:text-base lg:text-lg">
+      {job_Designation}
+    </p>
   </div>
 </div>
