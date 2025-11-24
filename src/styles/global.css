@@ -1,4 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
+
 
 /* ---------------------------------------
    Gravita GEO (Local Fonts)
@@ -154,4 +157,14 @@ svg {
   --color-n-900: var(--color-slate-100);
   --color-n-950: #ffffff;
   --color-yellow-700: #dfaf37;
+}
+
+
+/*Custom Font Classes */
+.font-clash {
+  font-family: "Clash Display", sans-serif;
+}
+
+.font-poppins {
+  font-family: "Poppins", sans-serif;
 }
