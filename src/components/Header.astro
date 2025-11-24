@@ -118,7 +118,9 @@ const navItems = [
   // The function for when a link is clicked also closes the menu and resets the icons:
   const scrollAndClose = (id) => {
     // ... scroll logic ...
-
+    const section = document.getElementById(id);
+    if (section) section.scrollIntoView({ behavior: "smooth" });
+    
     // Close the menu and reset icons
     if (nav && menuIcon) {
       nav.classList.add("hidden");
