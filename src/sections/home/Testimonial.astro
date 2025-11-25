@@ -1,6 +1,9 @@
 ---
-//COMPONENTS //
+// COMPONENTS //
 import TestimonialCard from "../../components/TestimonialCard.astro";
+
+// OTHERS //
+import EmblaCarousel from "embla-carousel";
 
 // DATA //
 import { testimonials } from "../../data/testimonials";
@@ -114,8 +117,6 @@ const uid = "embla-testimonials";
 
 <!-- ✅ Inline Embla Carousel Script -->
 <script>
-  import EmblaCarousel from "embla-carousel";
-
   function initEmblaRoot(root) {
     const viewport = root.querySelector("[data-embla-viewport]");
     if (!viewport) return;
