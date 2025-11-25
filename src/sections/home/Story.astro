@@ -1,0 +1,32 @@
+---
+import StoryCard from "../../components/StoryCard.astro";
+
+const story_title = "Where the Story Began";
+const story_tagline =
+  "A storyteller shaped by the game, the grind, and the frame.";
+---
+
+<!-- Story Section -->
+<section>
+  <!-- Container -->
+  <div class="bg-n-950 container flex flex-col gap-8 px-6 py-28">
+    <div class="flex flex-col gap-1">
+      <!-- Story Header -->
+      <p
+        class="text-center text-3xl leading-tight font-semibold tracking-normal text-yellow-700"
+      >
+        {story_title}
+      </p>
+      <!-- Story Tagline -->
+      <p
+        class="text-n-50 text-center text-base leading-tight font-light tracking-normal"
+      >
+        {story_tagline}
+      </p>
+    </div>
+    <!-- Story Cards -->
+    <div class="flex flex-col gap-10">
+      {Array.from({ length: 2 }).map((story, storyIndex) => <StoryCard />)}
+    </div>
+  </div>
+</section>

@@ -1,96 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
 
-/* ---------------------------------------
-   Gravita GEO (Local Fonts)
----------------------------------------- */
-/* @font-face {
-  font-family: "Gravita Geo";
-  src: url("/fonts/GravitaGEO-Thin.otf") format("opentype");
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-
 @font-face {
-  font-family: "Gravita Geo";
-  src: url("/fonts/GravitaGEO-ExtraLight.otf") format("opentype");
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Gravita Geo";
-  src: url("/fonts/GravitaGEO-Light.otf") format("opentype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Gravita Geo";
-  src: url("/fonts/GravitaGEO-Regular.otf") format("opentype");
+  font-family: "Clash Display";
+  src: url("/fonts/clash-display-regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Gravita Geo";
-  src: url("/fonts/GravitaGEO-Medium.otf") format("opentype");
+  font-family: "Clash Display";
+  src: url("/fonts/clash-display-medium.otf") format("opentype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Gravita Geo";
-  src: url("/fonts/GravitaGEO-Bold.otf") format("opentype");
+  font-family: "Clash Display";
+  src: url("/fonts/clash-display-semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Clash Display";
+  src: url("/fonts/clash-display-bold.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Gravita Geo";
-  src: url("/fonts/GravitaGEO-ExtraBold.otf") format("opentype");
-  font-weight: 800;
+  font-family: "Clash Display";
+  src: url("/fonts/clash-display-extralight.otf") format("opentype");
+  font-weight: 200;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Gravita Geo";
-  src: url("/fonts/GravitaGEO-Black.otf") format("opentype");
-  font-weight: 900;
+  font-family: "Clash Display";
+  src: url("/fonts/clash-display-light.otf") format("opentype");
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
-} */
-
-/* ---------------------------------------
-   Base Global Styles
----------------------------------------- */
-
+}
 
 @theme {
-  --font-sans: "Gravita Geo", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-serif: "Roboto Condensed", ui-serif, Georgia, Cambria,
-    "Times New Roman", Times, serif;
+  --font-sans:
+    "Poppins", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  --font-serif:
+    "Clash Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
 @layer base {
-
   /* Optional improvements */
   * {
     @apply box-border;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Clash Display', sans-serif;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-serif);
     font-weight: 600;
   }
-
 }
 
 img,

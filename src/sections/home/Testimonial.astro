@@ -1,10 +1,143 @@
 ---
-//COMPONENTS
+// COMPONENTS //
 import TestimonialCard from "../../components/TestimonialCard.astro";
 
+// OTHERS //
+import EmblaCarousel from "embla-carousel";
 
+// DATA //
+import { testimonials } from "../../data/testimonials";
 
-
-
+const uid = "embla-testimonials";
 ---
-<TestimonialCard/>
+
+<section class="ts-slider">
+  <div
+    class="container mx-auto flex flex-col gap-8 px-6 py-20 md:gap-10 lg:gap-16"
+  >
+    <div class="text-center">
+      <h2
+        class="mb-12 text-4xl leading-tight font-semibold tracking-normal text-[#C6A84A] text-yellow-700 md:text-6xl lg:text-7xl"
+      >
+        Testimonials
+      </h2>
+      <p
+        class="text-n-50 text-sm leading-tight font-light md:text-lg lg:text-xl"
+      >
+        Voices of excellence from my collaborators
+      </p>
+    </div>
+
+    <!-- Embla Root -->
+    <div data-embla-root id={uid} class="space-y-7 md:space-y-9">
+      <!-- Viewport -->
+      <div class="space-x-8 overflow-hidden" data-embla-viewport>
+        <!-- Container -->
+        <div class="flex gap-8" data-embla-container>
+          {
+            testimonials.map((testimonial) => (
+              <div class="ts-slide" data-embla-slide>
+                <TestimonialCard
+                  image_Url={testimonial.image_Url}
+                  name={testimonial.name}
+                  job_Designation={testimonial.job_Designation}
+                  description={testimonial.description}
+                />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Buttons wrap -->
+      <div class="flex justify-end gap-8">
+        <!-- Left Arrow -->
+        <button type="button" data-embla-prev aria-label="Previous">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            class="text-n-50 hover:text-yellow-700"
+          >
+            <path
+              d="M13.75 19.1667C14.0722 19.4888 14.5945 19.4888 14.9167 19.1667C15.2388 18.8445 15.2388 18.3222 14.9167 18L9.03799 12.1213C7.86641 10.9497 7.86642 9.05025 9.03799 7.87868L14.9167 2C15.2388 1.67783 15.2388 1.1555 14.9167 0.833334C14.5945 0.511167 14.0722 0.511167 13.75 0.833334L6.70465 7.87868C5.53308 9.05025 5.53308 10.9497 6.70465 12.1213L13.75 19.1667Z"
+              fill="currentColor"></path>
+          </svg>
+        </button>
+
+        <!-- Right Arrow -->
+        <button type="button" data-embla-next aria-label="Next">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            class="text-n-50 hover:text-yellow-700"
+          >
+            <path
+              d="M6.25 19.1667C5.92784 19.4888 5.4055 19.4888 5.08333 19.1667C4.76117 18.8445 4.76117 18.3222 5.08333 18L10.962 12.1213C12.1336 10.9497 12.1336 9.05025 10.962 7.87868L5.08333 2C4.76117 1.67783 4.76117 1.1555 5.08333 0.833334C5.4055 0.511167 5.92783 0.511167 6.25 0.833334L13.2953 7.87868C14.4669 9.05025 14.4669 10.9497 13.2953 12.1213L6.25 19.1667Z"
+              fill="currentColor"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .ts-slider {
+    --slides: 1;
+    --gap: 28px;
+    --peek: 0px;
+  }
+
+  @media (min-width: 768px) {
+    .ts-slider {
+      --slides: 2;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .ts-slider {
+      --slides: 3;
+    }
+  }
+
+  .ts-slide {
+    flex: 0 0
+      calc(
+        (100% - (var(--gap) * (var(--slides) - 1)) - var(--peek)) /
+          var(--slides)
+      );
+  }
+</style>
+
+<!-- ✅ Inline Embla Carousel Script -->
+<script>
+  function initEmblaRoot(root) {
+    const viewport = root.querySelector("[data-embla-viewport]");
+    if (!viewport) return;
+
+    const embla = EmblaCarousel(viewport, {
+      align: "start",
+      containScroll: "trimSnaps",
+      loop: false,
+      dragFree: false,
+    });
+
+    root
+      .querySelector("[data-embla-prev]")
+      ?.addEventListener("click", () => embla.scrollPrev());
+    root
+      .querySelector("[data-embla-next]")
+      ?.addEventListener("click", () => embla.scrollNext());
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const root = document.getElementById("embla-testimonials");
+    if (root) initEmblaRoot(root);
+  });
+</script>

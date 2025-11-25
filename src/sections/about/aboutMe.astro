@@ -8,29 +8,27 @@ const about_me_content = {
 ---
 
 <!-- About Me section -->
-<section class="flex flex-col w-auto h-auto px-6 bg-n-950">
+<section class="bg-n-950 flex h-auto w-auto flex-col px-6">
   <!-- Wrapper div added for styling -->
-  <div class="flex flex-col w-full h-auto py-11">
+  <div class="flex h-auto w-full flex-col py-11">
     <!-- Heading -->
     <p
-      class="font-serif font-semibold text-4xl leading-tight tracking-normal text-yellow-700"
+      class="text-4xl leading-tight font-semibold tracking-normal text-yellow-700"
     >
       {about_me_title}
     </p>
 
     <div>
-      <div class="flex flex-col w-full h-auto gap-3.5">
+      <div class="flex h-auto w-full flex-col gap-3.5">
         <!-- Role -->
         <p
-          class="font-sans font-medium text-sm leading-relaxed tracking-normal leading-relaxed text-n-50"
+          class="text-n-50 text-sm leading-relaxed font-medium tracking-normal"
         >
           {about_me_content.title}
         </p>
 
         <!-- Description -->
-        <p
-          class="font-sans font-light text-sm leading-relaxed tracking-[2%] leading-relaxed text-n-50"
-        >
+        <p class="text-n-50 text-sm leading-relaxed font-light tracking-[2%]">
           {about_me_content.content}
         </p>
       </div>
