@@ -43,14 +43,21 @@ export const services = [
   },
   {
     title: "Intellectual Properties",
-    description: "",
+    description: "Original ideas crafted, owned, and built to last.",
     videoUrl:
       "https://www.youtube.com/playlist?list=PLbwwrkQAX58_NmZCXotrbfmd2evjOXwIa",
   },
   {
     title: "Events, Launches & Experiences",
-    description: "",
+    description: "Turning moments into immersive brand experiences.",
     videoUrl:
       "https://www.youtube.com/playlist?list=PLbwwrkQAX58-rwizRFUd2IPdPZc9-cgFq",
+  },
+  {
+    title: "Travel, Food & Luxury Experiences",
+    description:
+      "From destinations to dining, we craft cinematic narratives that celebrate taste, culture, and elevated lifestyles.",
+    videoUrl:
+      "https://www.youtube.com/playlist?list=PLbwwrkQAX58_ZBGsAO_0ZTXt1gyXvEJcC",
   },
 ];
